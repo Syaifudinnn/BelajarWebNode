@@ -1,0 +1,9 @@
+.box{
+    width: 1350px;
+    height: 654px;
+    background: linear-gradient(#F3FDFF,#ABC9DB,#F3FDFF);
+    margin-left: 80px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    border-radius: 30px;
+}

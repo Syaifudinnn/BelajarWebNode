@@ -1,0 +1,97 @@
+#logo{
+    font-size: 30px;
+    font-weight: 800;
+    float: left;
+    font-family: tahoma;
+    color: #364f6b;
+    margin-left: 50px;
+}
+
+/* HEADER */
+#header{
+    width: 1520px;
+    height: 820px;
+    background: linear-gradient(#F3FDFF,#ABC9DB,#F3FDFF)
+}
+
+.box{
+    width: 1350px;
+    height: 654px;
+    background-color: #ebf9ff;
+    margin-left: 80px;
+    margin-bottom: 30px;
+    border-radius: 30px;
+}
+
+#title{
+    text-align: center;
+    font-family: font/Roboto;
+    font-weight: bold;
+    color: #364f6b;
+    padding-top: 50px;
+}
+
+#subtitle{
+    text-align: center;
+    font-family: font/Roboto;
+    font-weight: bold;
+    color: #364f6b;
+}
+
+#desc{
+    text-align: center;
+    color: #364f6b;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.tb-biru{
+    background: #3f72af;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* SECTION */
+#section1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#desc1{
+    font-family: comic sans ms;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+/* PRODUCT */
+#product{
+    width: 1520px;
+    height: 940px;
+    background-color: rgb(249, 249, 249);
+}
+
+/* PAKET */
+#box2{
+    width: 1530px;
+    height: 600px;
+    background: linear-gradient(#c9dfed,#F3FDFF,#F3FDFF,#F3FDFF,#F3FDFF,#c9dfed)
+}
+
+#boxPaket1{
+    width: 550px;
+    height: 350px;
+    background-color: #364f6b;
+    border-radius: 20px;
+}
+
+#boxPaket2{
+    width: 550px;
+    height: 350px;
+    background-color: #364f6b;
+    border-radius: 20px;
+}

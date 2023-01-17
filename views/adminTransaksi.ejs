@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin transaksi</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-stone-200">
+
+    <main class="container">
+        <div class="p-4 p-md-5 mb-3 flex" id="bioPage" style="background-color: #fff; border-radius: 2% ;">
+            <h3 class="subJudul mb-5 text-center" id="coursePage" style="color: rgb(142, 195, 176)">List Courses</h3>
+
+            <form action="/items/tambah" method="post">
+                <div class="p-4 mt-4 bg-white shadow-lg">
+                    <h4 class="subJudul mb-4 mt-2" id="coursePage">Add Item</h4>
+
+                    <div class="form">
+                        <p>Courses Name</p>
+                        <input type="text" name="name" class="form-control mb-3" placeholder="Nama" required>
+                    </div>
+
+                    <div class="form">
+                        <p>Courses Price</p>
+                        <input type="text" name="harga" class="form-control mb-3" placeholder="Harga / jam" style="width: 300px;" required>
+                    </div>
+
+                    <div class="form">
+                        <p>Courses Picture</p>
+                        <input type="file" name="gambar" class="form-control mb-4" required>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success" type="submit" style="background-color: rgb(142, 195, 176);">Add</button>
+                    </div>
+                </div>
+            </form>
+
+            <section class="p-4 mt-4 bg-white shadow-lg">
+                <h4 class="subJudul mb-3" id="coursePage">Stock Item Updates</h4>
+                <form action="/items/transaksii" method="post">
+                    <div class="flex items-center">
+                        <select name="type" class="w-1/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+                            <option value="masuk">In Stock</option>
+                        </select>
+                        <select placeholder="Paket Item" name="item_id"
+                            class="w-2/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+                            <% for (item of items) { %>
+                                <option value="<%= item.id %>">
+                                    <%= item.name %>
+                                </option>
+                                <% } %>
+                        </select>
+                        <input type="number" name="amount" value="0"
+                            class="w-1/5 w-full border px-3 py-2 text-sm mr-2 bg-white" style="width: 100px;"> (jam)
+                        <button
+                            class="w-1/5 bg-slate-500 text-white px-3 py-2 border text-sm font-bold tracking-widest hover:bg-slate-600"
+                            style="background-color: rgb(142, 195, 176); border: transparent; margin-left: 20px;">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="p-4 mt-4 bg-white shadow-lg">
+                <h4 class="subJudul mb-3" id="coursePage">Items Package List</h4>
+                <table class="border" cellpadding="10">
+                    <ul>
+                        <tr>
+                            <th class="border"> Item Name </th>
+                            <th class="border"> Item Price </th>
+                            <th class="border"> Available time </th>
+                            <th class="border"> Item Image </th>
+                            <!-- <th class="border"> Status Item </th>
+                            <th class="border"> Action </th> -->
+                        </tr>
+                        <% for (item of items) { %>
+                            <tr>
+                                <th class="border">
+                                    <%= item.name %>
+                                </th>
+                                <th class="border"> Rp.<%= item.harga %>
+                                </th>
+                                <th class="border">
+                                    <%= item.qty %> jam
+                                </th>
+                                <th class="border"><img height="100px" src="<%= item.gambar %>"></th>
+                                <!-- <th class="border">
+                                    <%= item.status %>
+                                </th>
+                                <th class="border"><a href="/updateItem/<%= item.id %>">Update</a></th> -->
+                            </tr>
+                            <% } %>
+                    </ul>
+                </table>
+            </section>
+
+            <section class="p-4 mt-4 bg-white shadow-lg">
+                <h4 class="subJudul mb-3" id="coursePage">History Stok</h4>
+                <table class="border" cellpadding="10">
+                    <ul>
+                        <tr>
+                            <th class="border"> Type </th>
+                            <th class="border"> Buyer Name </th>
+                            <th class="border"> Item Name </th>
+                            <th class="border"> Quantity </th>
+                            <th class="border"> Time And Date </th>
+                        </tr>
+                        <% for (log of pembukuan) { %>
+                            <tr>
+                                <th class="border">
+                                    <%= log.type %>
+                                </th>
+                                <th class="border">
+                                    <%= log.nama %>
+                                </th>
+                                <th class="border">
+                                    <%= items.find(item=> item.id === log.item_id).name %>
+                                </th>
+                                <th class="border">
+                                    <%= log.amount %> pcs
+                                </th>
+                                <th class="border">
+                                    <%= log.create_time%>
+                                </th>
+                            </tr>
+                            <% } %>
+                    </ul>
+                </table>
+            </section>
+
+            <div class="col-md-12 text-center">
+                <a href="/adminHome" class="btn btn-secondary btn-lg" role="button" style="margin-top: 20px;">Back To
+                    Home</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- <header class="text-white p-4 shadow-lg" style="background-color: rgb(142, 195, 176);">
+        <h1 class="text-center font-bold text-xl">List Product</h1>
+    </header>
+
+    <section class="p-4 mt-4 bg-white shadow-lg">
+        <h2 class="font-bold text-lg mb-4 border-b">List Item</h2>
+        <div>
+            <% for (item of items) { %>
+                <div class="border-b mb-2 flex items-center pb-3">
+                    <div class="flex-1 tracking-wide leading-none">
+                        <%= item.name %>
+                    </div>
+                    <div
+                        class="w-12 text-right mr-3 bg-green-500 text-white px-2 py-1 text-xs tracking-widest font-semibold leading-none">
+                        <%= item.qty %>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </section>
+
+    <section class="p-4 mt-4 bg-white shadow-lg">
+        <h2 class="font-bold text-lg mb-4 border-b">Tambah Item</h2>
+        <form action="/items/tambahh" method="post">
+            <div class="flex items-center">
+                <input type="text" name="name" placeholder="Nama Item"
+                    class="w-4/5 w-full border px-3 py-2 text-sm mr-2">
+                <button class="w-1/5 text-white px-3 py-2 border text-sm font-bold tracking-widest hover:bg-slate-600"
+                    style="background-color: rgb(142, 195, 176);">Tambah</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="p-4 mt-4 bg-white shadow-lg">
+        <h2 class="font-bold text-lg mb-4 border-b">Transaksi Item</h2>
+        <form action="/items/transaksii" method="post">
+            <div class="flex items-center">
+                <select name="type" class="w-1/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+                    <option value="masuk">Masuk</option>
+                    <option value="keluar">Tarik</option>
+                </select>
+                <select name="item_id" class="w-2/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+                    <% for (item of items) { %>
+                        <option value="<%= item.id %>">
+                            <%= item.name %>
+                        </option>
+                        <% } %>
+                </select>
+                <input type="number" name="amount" value="0"
+                    class="w-1/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+                <button class="w-1/5 text-white px-3 py-2 border text-sm font-bold tracking-widest hover:bg-slate-600"
+                    style="background-color: rgb(142, 195, 176);">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="p-4 mt-4 bg-white shadow-lg">
+        <h2 class="font-bold text-lg mb-4 border-b">Pembukuan</h2>
+        <div>
+            <% for (log of pembukuan) { %>
+                <div class="border-b mb-2">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="mb-3 text-sm text-slate-400 leading-none">
+                                <%= log.create_item %>
+                            </div>
+                            <div class="mb-3 tracking-wide leading-none">
+                                <%= items.find(item=> item.id === log.item_id).name %> (x<%= log.amount %>)
+                            </div>
+                        </div>
+                        <div class="bg-sky-500 text-white px-2 py-1 text-xs tracking-widest font-semibold">
+                            <%= log.type %>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </section> -->
+
+</body>
+
+</html>

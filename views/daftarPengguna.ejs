@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Pengguna</title>
+    <link rel="stylesheet" href="/daftar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+</head>
+
+<body>
+    <!-- Navbar --> 
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" id="logo">Online Courses</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light">
+                            <li><a class="dropdown-item" href="/daftarPengguna">Daftar Pengguna</a></li>
+                            <li><a class="dropdown-item" href="/adminKelas">Kelas</a></li>
+                            <li><a class="dropdown-item" href="/adminTransaksi">Transaksi</a></li>
+                            <li><a class="dropdown-item" href="/logout">Keluar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <a href="/adminHome" style="color: grey; margin-right: 800px;">Home</a>
+            </div>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Daftar -->
+    <br>    
+    <div>
+        <div style="text-align: center;">
+            <br>
+            <h5>Owner</h5>
+            <hr>
+            <p>Mukhammad Syaifudin Adn</p
+        </div>
+    </div>
+
+    <!-- <div class="p-4 p-md-5 mb-4 row " id="TablePage">
+
+        <table class="border" cellpadding="8">
+            <ul>
+                <tr style="background-color:#5FA8A0; color: #d6fffb;">
+                    <th class="border fw-normal"> User Name </th>
+                    <th class="border fw-normal"> Email </th>
+                    <th class="border fw-normal"> Password </th>
+                    <th class="border fw-normal"> Edit </th>
+                    <th class="border fw-normal"> Delete </th> -->
+                    <!-- <th class="border fw-normal"> Edit </th>
+              <th class="border fw-normal"> Update </th>
+              <th class="border fw-normal"> Delete </th> -->
+                <!-- </tr>
+                <%for(const s of user) { %>
+                    <tr>
+                        <th class="border">
+                            <%= s.nama %>
+                        </th>
+                        <th class="border">
+                            <%= s.email %>
+                        </th>
+                        <th class="border">
+                            <%= s.password %>
+                        </th>
+                        <th class="border"><a class="text-dark text-decoration-none" href="/edit/<%= s.id %>">Edit</a></th>
+                        <th class="border"><a class="text-dark text-decoration-none" href="/delete/<%= s.id %>">Delete</a></th>
+                    </tr>
+                    <% } %>
+            </ul>
+        </table>
+    </div> -->
+
+    <div>
+        <div style="text-align: center;">
+            <h5>User</h5>
+            <hr>
+                <% for(const s of user) { %>
+                    <li><%= s.nama %> (<%= s.email %>)</li>
+                    <a href="/edit/<%= s.id %>">Edit</a>
+                    <a href="/delete/<%= s.id %>">Hapus</a>
+                <% } %>
+        </div>
+    </div>
+    <!-- Daftar -->
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+#logo{
+    font-size: 30px;
+    font-weight: 800;
+    float: left;
+    font-family: tahoma;
+    color: #364f6b;
+    margin-left: 50px;
+}
+
+#header{
+    background: url(https://img.freepik.com/free-vector/gradient-network-connection-background_23-2148865392.jpg?size=626&ext=jpg);
+    background-size: cover;
+    height: 75vh;
+    background-position: center;
+}

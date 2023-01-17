@@ -1,0 +1,93 @@
+/* LOGO NAVBAR */
+.logo{
+    font-size: 30px;
+    font-weight: 800;
+    float: left;
+    font-family: tahoma;
+    color: #364f6b;
+    margin-left: 50px;
+}
+
+/* HOME */
+#subjudul1{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+    color: #364f6b;
+}
+
+#desc1{
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+#judul1{
+    font-family: 'comic sans ms';
+    font-weight: 800;
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #364f6b;
+    width: 100%;
+    line-height: 50px;
+}
+
+#keterangan1{
+    margin-bottom: 20px;
+}
+
+#tombol-join{
+    background: #3f72af;
+    width: 100px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px 15px 10px 15px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ABOUT */
+#desc2{
+    margin-top: 60px;
+    margin-bottom: 40px;
+    margin-left: 50px;
+}
+
+/* CONTACT US */
+#contact{
+    background: aliceblue;
+    padding: 50px 0px 50px 0px;
+}
+
+.footer{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.footer-section{
+    width: 20%;
+    margin: 0 auto;
+}
+
+h3{
+    font-family: 'comic sans ms';
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #364f6b;
+    width: 100%;
+    line-height: 50px;
+}
+
+.tentang{
+    width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+.foot{
+    margin-bottom: 20px;
+}
